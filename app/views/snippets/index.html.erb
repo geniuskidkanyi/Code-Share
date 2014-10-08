@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+
+  <% @snippets.each do |snippet| %>
+    <div class="col-md-4">
+      <h1 class="text-center"><%= snippet.title %></h1>
+      <hr/>
+      <h3><%= snippet.language %></h3>
+      <code><%= snippet.snippet %></code>
+       <br/>      
+        <td><%= link_to 'Show', snippet, class: 'btn btn-default' %></td>
+        <td><%= link_to 'Edit', edit_snippet_path(snippet), class: 'btn btn-default' %></td>
+        <td><%= link_to 'Destroy', snippet, class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </div>            
+  <% end %>
+  </div>
+</div>
