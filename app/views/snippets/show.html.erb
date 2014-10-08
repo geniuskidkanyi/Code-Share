@@ -1,24 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center"><%= @snippet.title %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <p id="notice"><%= notice %></p>    
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p class="text-center">created <strong><%= time_ago_in_words(@snippet.created_at) %></strong> ago in the <strong><%= @snippet.language %></strong> Language</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <p>Description</p>
+      <p><%= @snippet.description %></p>
+    </div>
+    <div class="col-md-6">
+      <p>Snippet</p>
+      <code><%= @snippet.snippet %></code>
+    </div>
+  </div>
+  <%= link_to 'Edit', edit_snippet_path(@snippet), class: 'btn btn-default' %> 
+  <%= link_to 'Back', snippets_path, class: 'btn btn-default' %>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @snippet.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @snippet.description %>
-</p>
-
-<p>
-  <strong>Snippet:</strong>
-  <%= @snippet.snippet %>
-</p>
-
-<p>
-  <strong>Language:</strong>
-  <%= @snippet.language %>
-</p>
-
-<%= link_to 'Edit', edit_snippet_path(@snippet) %> |
-<%= link_to 'Back', snippets_path %>
